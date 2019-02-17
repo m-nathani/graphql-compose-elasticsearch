@@ -1,38 +1,64 @@
 {
-  "name": "thomson-reuters",
+  "name": "graphql-elasticsearch-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "Graphql App using Node with typescript, KOA framework. Elasticsearch for dataStore. Middlewares JWT, CORS, Winston Logger.",
   "main": "index.js",
   "engines": {
     "node": "10.11.0"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node src/index.js",
-    "test:execute-test": "mocha --require @babel/register 'src/**/*.spec.js'",
-    "test": "echo \"No test specified\" && exit 0"
+    "build-ts": "tsc",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lint:fix": "tslint -c tslint.json -p tsconfig.json --fix",
+    "build": "npm run lint && npm run build-ts",
+    "serve": "ts-node src/index.ts",
+    "start": "nodemon --watch 'src/**/*' -e ts,tsx --exec ts-node src/index.ts"
   },
-  "keywords": [],
-  "author": "10pearls",
+  "keywords": [
+    "typescript",
+    "koa",
+    "koa2",
+    "winston",
+    "rest",
+    "starter",
+    "helmet",
+    "api",
+    "cors",
+    "apollo server",
+    "elasticsearch",
+    "graphql",
+    "graphql-compose",
+    "node",
+    "axios"
+  ],
+  "author": "Murtaza Nathani (mudza100@gmail.com)",
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.1.6",
-    "@babel/register": "^7.0.0",
+    "@types/axios": "^0.14.0",
+    "@types/elasticsearch": "^5.0.31",
+    "@types/koa": "^2.0.48",
+    "@koa/cors": "^2.2.3",
+    "@types/koa-helmet": "^3.1.2",
+    "@types/dotenv": "^6.1.0",
+    "@types/winston": "^2.4.4",
     "axios": "^0.18.0",
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "nodemon": "^1.18.7"
+    "nodemon": "^1.18.7",
+    "ts-node": "3.3.0",
+    "tslint": "^5.10.0",
+    "typescript": "^3.3.3"
   },
   "dependencies": {
-    "apollo-server": "^2.4.0",
-    "apollo-server-koa": "^2.4.0",
+    "apollo-server": "^2.4.2",
+    "apollo-server-koa": "^2.4.2",
+    "koa": "^2.7.0",
+    "koa-helmet": "^4.0.0",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "elasticsearch": "^15.4.1",
     "graphql": "^14.1.1",
-    "graphql-iso-date": "^3.6.1",
+    "graphql-compose": "^5.10.4",
+    "graphql-compose-elasticsearch": "^2.2.2",
     "graphql-resolvers": "^0.3.2",
-    "koa": "^2.7.0",
-    "validator": "^10.11.0"
+    "graphql-tools": "^4.0.4",
+    "winston": "^3.2.1"
   }
 }
