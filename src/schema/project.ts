@@ -1,5 +1,5 @@
 import { composeWithElastic } from 'graphql-compose-elasticsearch';
-import { client } from '../elasticsearch';
+import { elasticClient } from '../boostrap/elasticsearch';
 import { PROJECT_INDEX, PROJECT_TYPE } from '../constant';
 
 const mapping = {
@@ -23,7 +23,7 @@ export const ProjectTC = composeWithElastic({
   elasticIndex: PROJECT_INDEX,
   elasticType: PROJECT_TYPE,
   elasticMapping: mapping,
-  elasticClient: client,
+  elasticClient: elasticClient,
   // elastic mapping does not contain information about is fields are arrays or not
   // so provide this information explicitly for obtaining correct types in GraphQL
 });
