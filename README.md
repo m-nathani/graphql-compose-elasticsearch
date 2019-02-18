@@ -14,6 +14,3 @@
 ## Manage Graphql Playground
 
 * `Graphql Playground`: http://localhost:3000/graphql.
-
-## LICENSE
-MIT

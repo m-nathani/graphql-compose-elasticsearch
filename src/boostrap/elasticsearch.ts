@@ -8,7 +8,7 @@ export const elasticSearchConnection = () => {
 
 export const pingElasticsearch = async (client: Client) => {
     return client.ping({
-        requestTimeout: 30000,
+        requestTimeout: 3000,
     });
 };
 

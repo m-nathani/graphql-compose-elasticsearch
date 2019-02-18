@@ -9,6 +9,7 @@ export const bootstrap = async (): Promise<ApolloServer> => {
     await pingElasticsearch(elasticClient);
     return await apolloServer(schema);
   } catch (err) {
-    console.log('bootstrap error', err);
+    console.log('bootstrap error: ', err);
+    throw err;
   }
 };
